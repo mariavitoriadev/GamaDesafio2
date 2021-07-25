@@ -38,7 +38,7 @@ export default function Products() {
       <>
         <StyledProducts className="container">
           {products.map((product, index) => {
-            return <ProductItem item={product}></ProductItem>
+            return <ProductItem key={product.name} item={product}></ProductItem>
           })}
         </StyledProducts>
       </>

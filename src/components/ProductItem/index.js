@@ -22,7 +22,8 @@ const StyledProductItem = styled.div`
     color: #333;
   }
 
-  a {
+  button {
+    border: none;
     display: block;
     margin-left: auto;
     font-weight: 600;
@@ -61,7 +62,7 @@ export default function ProductItem({ item }) {
         <img src={item.img} alt={`Produto ${item.id} `}/>
         <p>{item.name}</p>
         <span>R$ {item.price}</span>
-        <a href="#" type="button" onClick={() => { addToCart(item) }}>Comprar</a>
+        <button onClick={() => { addToCart(item) }}>Comprar</button>
       </StyledProductItem>
     </>
   );
