@@ -58,10 +58,10 @@ export default function ProductItem({ item }) {
   return (
     <>
       <StyledProductItem>
-        <img src={item.img} />
+        <img src={item.img} alt={`Produto ${item.id} `}/>
         <p>{item.name}</p>
         <span>R$ {item.price}</span>
-        <a type="button" onClick={() => { addToCart(item) }}>Comprar</a>
+        <a href="#" type="button" onClick={() => { addToCart(item) }}>Comprar</a>
       </StyledProductItem>
     </>
   );
