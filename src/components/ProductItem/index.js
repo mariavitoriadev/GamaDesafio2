@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const StyledProductItem = styled.div`
-  width: 250px;
+  width: 240px;
   margin: 0 auto 30px;
 
   img {
@@ -32,15 +32,27 @@ const StyledProductItem = styled.div`
     background-color: #1de240;
     text-transform: uppercase;
   }
+
+  @media(min-width: 768px){
+    margin: 0 20px 40px;
+  }
 `
 
 export default function ProductItem({ item }) {
 
+  let items = [];
+
   function addToCart(item) {
-    let items = [];
-    items = Object.values(JSON.parse(window.localStorage.cart));
-    items.push(item);
-    window.localStorage.cart = JSON.stringify(items);
+    
+    if (!window.localStorage.cart) {
+      items.push(item);
+      window.localStorage.cart = JSON.stringify(items);
+    }
+    else {
+      items = Object.values(JSON.parse(window.localStorage.cart));
+      items.push(item);
+      window.localStorage.cart = JSON.stringify(items);
+    }
   }
 
   return (

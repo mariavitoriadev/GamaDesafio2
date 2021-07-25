@@ -1,18 +1,6 @@
 import styled from 'styled-components';
 
-export const ListItem = styled.a`
-    display: none;
-    color: #000;
-    text-decoration: none;
-    margin-left: 25px;
-
-    @media(min-width: 600px) {
-        display: block;
-        font-size: 18px;
-    }
-`
-
-export const Header = styled.header`
+const StyledHeader = styled.header`
     background-color: #fff;
     box-shadow: 0px 5px 5px #dedede;
 
@@ -27,10 +15,15 @@ export const Header = styled.header`
         width: 50px;
     }
 
-    .menu {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
 `
+
+export default function Header() {
+
+    return (
+        <StyledHeader>
+            <div className="header-wrapper container">
+                <img className="logo" src="/logo.png" alt="Gama Logo" />
+            </div>
+        </StyledHeader>
+    );
+}
